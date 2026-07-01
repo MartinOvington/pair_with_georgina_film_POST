@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>AceReads Films</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <h1>All your Films</h1>
+        <ul>
+            {% for film in films %}
+                <li>{{film.title}}, {{film.release_year}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

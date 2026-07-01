@@ -1,5 +1,8 @@
 DROP TABLE IF EXISTS books;
 DROP SEQUENCE IF EXISTS books_id_seq;
+DROP TABLE IF EXISTS films;
+DROP SEQUENCE IF EXISTS films_id_seq;
+
 
 CREATE SEQUENCE IF NOT EXISTS books_id_seq;
 CREATE TABLE books (
@@ -8,7 +11,19 @@ CREATE TABLE books (
     author text
 );
 
+CREATE SEQUENCE IF NOT EXISTS films_id_seq;
+CREATE TABLE films (
+    id SERIAL PRIMARY KEY,
+    title text,
+    release_year int
+);
+
+
 INSERT INTO books (title, author) VALUES('The Gruffalo', 'Julia Donaldson');
 INSERT INTO books (title, author) VALUES('Ada Twist, Scientist', 'Andrea Beaty');
 INSERT INTO books (title, author) VALUES('The Girl Who Drank the Moon', 'Kelly Barnhill');
 INSERT INTO books (title, author) VALUES('Dragons in a Bag', 'Zetta Elliott');
+
+INSERT INTO films (title, release_year) VALUES('Jaws', 1987);
+INSERT INTO films (title, release_year) VALUES('Scream', 1999);
+INSERT INTO films (title, release_year) VALUES('Project Hail Mary', 2026);

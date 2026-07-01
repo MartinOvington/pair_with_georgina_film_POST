@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect
 from fixed_data import FIXED_BOOKS, FIXED_AUTHORS
 from lib.book_repository import *
+from lib.film_repository import *
 from lib.database_connection import *
 
 app = Flask(__name__)
@@ -8,6 +9,7 @@ connection = DatabaseConnection()
 connection.connect()
 connection.seed("./seeds/book_store.sql")
 book_repo = BookRespository(connection)
+film_repo = FilmRepository(connection)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -21,6 +23,11 @@ def hello():
 def get_books():
     books = book_repo.all()
     return render_template("books.html", books=books)
+
+@app.route('/films', methods=['GET'])
+def get_films():
+    films = film_repo.all()
+    return render_template("films.html", films=films)
 
 @app.route('/books', methods=['POST'])
 def create_book():

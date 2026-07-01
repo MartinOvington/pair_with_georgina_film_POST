@@ -8,7 +8,7 @@ import os
 # If the below seems too complex right now, that's OK.
 # That's why we have provided it!
 class DatabaseConnection:
-    DATABASE_NAME = "book_store" # <-- CHANGE THIS!
+    DATABASE_NAME = os.getenv("DATABASE_NAME", "book_store_test")
 
     def __init__(self):
         self.connection = None
