@@ -10,5 +10,10 @@
                 <li>{{film.title}}, {{film.release_year}}</li>
             {% endfor %}
         </ul>
+        <form method="POST" action="/films">
+            <input type="text" name="title" placeholder="Title"><br>
+            <input type="text" name="release_year" placeholder="Release Year"><br>
+        <input type="submit" value="Submit">
+        </form>
     </body>
 </html>

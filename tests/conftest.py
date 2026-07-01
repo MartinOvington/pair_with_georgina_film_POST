@@ -24,6 +24,7 @@ def clean_db(db_connection, scope="function"):
     db_connection.seed("seeds/book_store.sql")
     return db_connection
 
+
 # Now, when a test includes a parameter named `db_connection`, Pytest automatically
 # calls this fixture before the test runs and passes in its return value instead 
 # of the function itself.

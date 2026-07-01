@@ -10,3 +10,11 @@ class FilmRepository:
             "SELECT * FROM films",
             row_factory=film_factory
         )
+    
+    def create(self, film):
+        self._connection.execute(
+            "INSERT INTO films " \
+            "(title, release_year) " \
+            "VALUES(%s, %s)",
+            [film.title, film.release_year]
+        )

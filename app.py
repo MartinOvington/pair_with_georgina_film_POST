@@ -31,15 +31,18 @@ def get_films():
 
 @app.route('/books', methods=['POST'])
 def create_book():
-    connection = DatabaseConnection()
-    connection.connect()
     book_details = request.form
     book = Book(title=book_details["title"], author=book_details["author"])
     book_repo.create(book)
     return redirect("/books")
 
+@app.route('/films', methods=['POST'])
+def create_film():
+    film_details = request.form
+    film = Film(title=film_details["title"], release_year=film_details["release_year"])
+    film_repo.create(film)
+    return redirect("/films")
 
-    
 @app.route('/authors', methods=['GET'])
 def get_authors():
     return FIXED_AUTHORS
