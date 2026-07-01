@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    color: red
+}
+
+html {
+    font-style: "Times New Roman";
+    background-color: lightpink
+}
+
+li {
+    line-height: 50px;
+    color: purple
+}
+
+img {
+    border-radius: 5px;
+    border-color: lightblue
+}
