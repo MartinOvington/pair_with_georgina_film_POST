@@ -39,7 +39,7 @@ def create_book():
 @app.route('/films', methods=['POST'])
 def create_film():
     film_details = request.form
-    film = Film(title=film_details["title"], release_year=film_details["release_year"])
+    film = Film(title=film_details["title"], release_year=int(film_details["release_year"]))
     film_repo.create(film)
     return redirect("/films")
 
